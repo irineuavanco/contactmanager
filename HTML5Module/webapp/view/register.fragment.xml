@@ -1,0 +1,94 @@
+<core:FragmentDefinition 
+     xmlns="sap.m" 
+     xmlns:core="sap.ui.core"
+     xmlns:c="sap.ui.core"
+     xmlns:l="sap.ui.layout"
+     xmlns:f="sap.ui.layout.form"
+     xmlns:ui="sap.ui"
+     xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" >
+
+    <Dialog>
+      
+        <f:SimpleForm id="idStudentRegistrationForm"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                title="Registration Form"
+                maxContainerCols="2"
+                labelSpanL="2"
+                labelSpanM="2"
+                emptySpanL="0"
+                emptySpanM="0"
+                columnsL="1"
+                columnsM="1"
+                class="editableForm"
+                singleContainerFullSize="false" >
+                <f:content>
+                    <core:Title text="Informações Básicas"    ></core:Title>
+                    <Label text="Name" />
+                    <Input value="{/firstName}" placeholder="Primeiro Nome" />                    
+                    <Input value="{/middleName}" placeholder="Sobrenome" >
+                        <layoutData>
+                          <l:GridData span="L3 M3 S4"   ></l:GridData>
+                        </layoutData>
+
+                    </Input>
+                    <Input value="{/lastName}" placeholder="Último Nome" >
+                        <layoutData>
+                          <l:GridData span="L3 M3 S4"   ></l:GridData>
+                        </layoutData>
+                    </Input>
+
+                    <core:Icon  src="sap-icon://person-placeholder" size ="3em" ></core:Icon>
+
+                    <Label text="Sexo" />
+                    <RadioButtonGroup selectedIndex="{/gender}" 
+                               columns="4" select="onGenderSelect" width="100%">
+                          <buttons>
+                             <RadioButton id="rbFemaleId"  text="Feminino" ></RadioButton>
+                             <RadioButton id="rbMaleId"  text="Masculino" ></RadioButton>                             
+                           
+                          </buttons>
+
+                    </RadioButtonGroup>
+
+                    <Label text="Data de Nascimento" />
+                    <DatePicker id="validFromPickerEdit" value="{/dateOfBirth}">
+                       <layoutData>
+                           <l:GridData span="L4 M3 S4" ></l:GridData>
+                       </layoutData>
+                    </DatePicker>
+
+                    <Label text="Nome do Pai" />
+                    <Input value="{/fatherName}" placeholder="Entre o Nome do Pai" >                    
+                        <layoutData>
+                          <l:GridData span="L3 M3 S4"   ></l:GridData>
+                        </layoutData>
+
+                    </Input>
+
+                    <Label text="Tel. Contato" />
+                    <Input value="{/contactNumber}" placeholder="Entre o Tel.  Contato" >                    
+                        <layoutData>
+                          <l:GridData span="L3 M3 S4"   ></l:GridData>
+                        </layoutData>
+
+                    </Input>
+
+                    <Label text="Alternative No." />
+                    <Input value="{/alternativeNumber}" placeholder="Enter Alternative Contact Number" >                    
+                        <layoutData>
+                          <l:GridData span="L3 M3 S4"   ></l:GridData>
+                        </layoutData>
+                    </Input>
+
+                    <Label text="" />
+                    <Button text="Save"  type="Accept"    press="handleSaveBtn" />
+                    <Button text="Cancel"  type="Reject"    press="handleCancelBtn" />
+
+
+                </f:content>
+            </f:SimpleForm>
+
+    </Dialog>    
+
+</core:FragmentDefinition>

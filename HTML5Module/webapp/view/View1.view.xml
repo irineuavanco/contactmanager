@@ -1,0 +1,58 @@
+<mvc:View controllerName="ns.HTML5Module.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+          xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+                     <content>
+                                    <Table 	items="{/students}" >
+                                       <headerToolbar>
+                                           <Toolbar >
+                                                <ToolbarSpacer ></ToolbarSpacer>
+                                                <Button icon="sap-icon://add" text="Add Student" press="handleAddStudent" /> 
+                                           </Toolbar>
+
+                                       </headerToolbar>
+                                        <columns>
+                                            <Column>
+                                                <Text text="Name"  />
+                                            </Column>
+                                            <Column>
+                                                <Text text="Gender"  />
+                                            </Column>
+                                            <Column>
+                                                <Text text="Date of Birth"  />
+                                            </Column>
+                                            <Column hAlign="Center">
+                                                <Text text="Father Name"  />
+                                            </Column>
+                                            <Column hAlign="Right" > 
+                                                <Text text="Contact Number"  />
+                                            </Column>
+                                            <Column  hAlign="Right" > 
+                                                <Text text="Action"  />
+                                            </Column>
+
+                                        </columns>
+                                        <items>
+                                            <ColumnListItem >
+                                                 <cells>
+                                                    <ObjectIdentifier title="{firstName}" ></ObjectIdentifier>
+                                                    <Text text ="{genderText}" />
+                                                    <Text text ="{dateOfBirth}" />
+                                                    <Text text ="{fatherName}" />
+                                                    <Text text ="{contactNumber}" />                                                                                                                                                   
+                                                    <HBox>                                                 
+                                                    <Button  icon="sap-icon://edit"  press="handleEditStudent" />
+                                                    <Button  icon="sap-icon://delete"  press="handleDeleteStudent" />                                                  
+                                                    </HBox>                                                 
+                                                 </cells>
+                                            </ColumnListItem>
+                                        </items>
+                                    </Table>                       
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
